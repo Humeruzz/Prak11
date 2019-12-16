@@ -1,8 +1,9 @@
 public class Main {
 
     public static void main(String[] args) {
-       // ArrayQueueModule temp = new ArrayQueueModule();
-       // temp.showQueue();
+        ArrayQueueModule temp2;
+        temp2 = ArrayQueueModule.getInstance();
+        temp2.showQueue();
         ArrayQueueADTI temp = new ArrayQueueADT(10);
         temp.enqueue(10);
         ArrayQueue temp1 = new ArrayQueue(10);

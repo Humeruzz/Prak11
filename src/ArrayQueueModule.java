@@ -1,10 +1,11 @@
 public class ArrayQueueModule {
+    private static ArrayQueueModule instance;
     private int size = 10;
     private int num = 6;
     private int[] array;
     private int last, first;
 
-    public ArrayQueueModule() {
+    private ArrayQueueModule() {
         last = -1;
         first = 0;
         array = new int[size];
@@ -31,7 +32,7 @@ public class ArrayQueueModule {
     public void showQueue() {
         if (array != null) {
             int i = first;
-            System.out.println(last + " " + first);
+            System.out.println("Last id: "+ last + " First id: " + first);
             while (i != last) {
                 System.out.println(array[i] + " ");
                 if (i + 1 == size) {
@@ -44,5 +45,12 @@ public class ArrayQueueModule {
         } else {
             System.out.println("Out of Queue");
         }
+    }
+
+    public static ArrayQueueModule getInstance(){
+        if(instance == null){
+            instance = new ArrayQueueModule();
+        }
+        return instance;
     }
 }
